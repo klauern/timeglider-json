@@ -14,7 +14,7 @@ public class Timeline {
 	private List<Event> events;
 	private List<Legend> legend;
 	
-	public class Builder {
+	public static class Builder {
 		private String id;
 		private String title;
 		private String description;
