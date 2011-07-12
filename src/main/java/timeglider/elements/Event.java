@@ -1,4 +1,4 @@
-package timeglider.json;
+package timeglider.elements;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -6,6 +6,13 @@ import java.util.Date;
 
 import timeglider.DateDisplay;
 
+/**
+ * An Event is the base element in a TimeGlider timeline.  Each event can show various details about itself,
+ * such as a description, name, start and end dates, as well as providing ancillary data such as level
+ * of importance relative to other elements, an icon (PNG), and a link to follow the event somewhere else.
+ * @author Nick Klauer <klauer@gmail.com>
+ *
+ */
 public class Event {
 
 	private String id;
@@ -17,7 +24,7 @@ public class Event {
 	private String url;
 	private String icon;
 	private Integer importance;
-	transient final static int DEFAULT_IMPORTANCE = 20; // So says TimeGlider
+	public transient final static int DEFAULT_IMPORTANCE = 20; // So says TimeGlider
 														// docs.
 
 	public static class EventBuilder {

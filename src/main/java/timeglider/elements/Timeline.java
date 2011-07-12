@@ -1,9 +1,20 @@
-package timeglider.json;
+package timeglider.elements;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Timeline Base class.  This class contains metadata about the timeline you want to display, 
+ * such as the unique id of the timeline, name and description, focus date for it, and zoom.
+ * <br/><br/>
+ * Also in the timeline are {@code List<>} elements of {@link Event} and {@link Legend} types,
+ * which you will use to populate your timeline.
+ * 
+ * 
+ * @author Nick Klauer <klauer@gmail.com>
+ * @see {@link http://timeglider.com/jquery/?p=json}
+ */
 public class Timeline {
 	
 	private String id;

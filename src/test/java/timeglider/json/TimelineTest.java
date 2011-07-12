@@ -7,6 +7,9 @@ import java.util.Date;
 import org.junit.Before;
 import org.junit.Test;
 
+import timeglider.elements.Event;
+import timeglider.elements.Timeline;
+
 import com.google.common.collect.Lists;
 import com.google.gson.Gson;
 

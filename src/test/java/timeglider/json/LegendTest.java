@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import timeglider.elements.Legend;
+
 import com.google.gson.Gson;
 
 public class LegendTest {

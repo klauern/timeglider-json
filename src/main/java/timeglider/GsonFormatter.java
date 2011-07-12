@@ -1,11 +1,17 @@
-package timeglider.gson;
+package timeglider;
 
 import java.util.List;
 
-import timeglider.json.Timeline;
+import timeglider.elements.Timeline;
 
 import com.google.gson.Gson;
 
+/**
+ * Base class to format a {@code List<>} of {@link Timeline} objects and serialize
+ * into JSON-formatted data.
+ * 
+ * @author Nick Klauer <klauer@gmail.com>
+ */
 public class GsonFormatter {
 
 	private List<Timeline> timelines;

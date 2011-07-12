@@ -13,7 +13,8 @@ import org.junit.Test;
 import org.junit.matchers.JUnitMatchers;
 
 import timeglider.DateDisplay;
-import timeglider.json.Event.EventBuilder;
+import timeglider.elements.Event;
+import timeglider.elements.Event.EventBuilder;
 
 import com.google.gson.Gson;
 
