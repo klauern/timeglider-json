@@ -2,11 +2,12 @@ TimeGlider JSON - Java Stubs for Serialization
 ==============================================
 This is a simple project to give me a chance to serialize from Java to
 [Timeglider][1]'s JSON format.  It does not deserialize the data, as
-I currently have no use for it.  However, you are more than free to contribute.
+I currently have no use for it.
 
-I've basically provided 3 base classes(Event, Legend, Timeline) that you can build 
-to populate your timeline, then just throw it at Google's [GSON][3] object to 
-generate your JSON format.  Gson is a pretty nifty library, btw.
+I've provided 3 base classes(Event, Legend, Timeline) and one serializer (GsonFormatter) 
+that you can build to populate your timeline, then just throw it at Google's 
+[Gson][3] object to generate your JSON format.  Gson is a pretty nifty library,
+and makes much of this work a breeze.
 
 
 How to Use
@@ -21,10 +22,10 @@ borrowing from Josh Bloch's [revised builder pattern][4]:
 
     Event e = new Event.EventBuilder("unique event id", "Event Title", new
                                     Date())
-                                      .title("title")
+                                      .title("title")       // all additional fields are optional
                                       .enddate(new Date())
                                       ....
-                                      .build();
+                                      .build();             // But don't forget to do this
 
 
 Rolling these into a timeline is pretty easy, too.  To create a single timeline,
@@ -32,15 +33,15 @@ create a new `Timeline` class:
 
     Timeline t = new Timeline.Builder("id_to_give", "Title of Timeline",
                                       List<Event> list_of_events)
-                                      .focus_date(...)
-                                      ...all additional fields are optional
-                                      .build();
+                                      .focus_date(...)      // same as Event: all additional fields optional
+                                      ...
+                                      .build();             // make sure you do this, though
 
 and finally, to create your TimeGlider JSON:
 
     GsonFormatter g = new GsonFormatter(new List<Timeline>(){ timelines });
 
-    String timeglider_json = g.toJson();
+    String timeglider_json = g.toJson();  // Ta Da!
 
 Details about Timeglider can be found in the Information section.
 
