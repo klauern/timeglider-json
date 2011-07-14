@@ -17,6 +17,10 @@ public class GsonFormatter {
 	private List<Timeline> timelines;
 	private transient Gson gson = new Gson();
 	
+	public GsonFormatter(List<Timeline> timelines) {
+		this.timelines = timelines;
+	}
+	
 	public String toJson() {
 		return gson.toJson(this);
 	}

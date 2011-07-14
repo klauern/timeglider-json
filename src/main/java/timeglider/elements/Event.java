@@ -25,7 +25,7 @@ public class Event {
 	private String icon;
 	private Integer importance;
 	public transient final static int DEFAULT_IMPORTANCE = 20; // So says TimeGlider
-														// docs.
+															   // docs.
 
 	public static class EventBuilder {
 		private String id;
