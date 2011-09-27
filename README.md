@@ -20,28 +20,33 @@ is a title of what the icon displays, and a link to the `.png` file for it.
 Each Timeline is mostly composed of `Event` instance, which you can create
 borrowing from Josh Bloch's [revised builder pattern][4]:
 
+```java
     Event e = new Event.EventBuilder("unique event id", "Event Title", new
                                     Date())
                                       .title("title")       // all additional fields are optional
                                       .enddate(new Date())
                                       ....
                                       .build();             // But don't forget to do this
-
+```
 
 Rolling these into a timeline is pretty easy, too.  To create a single timeline,
 create a new `Timeline` class:
 
+```java
     Timeline t = new Timeline.Builder("id_to_give", "Title of Timeline",
                                       List<Event> list_of_events)
                                       .focus_date(...)      // same as Event: all additional fields optional
                                       ...
                                       .build();             // make sure you do this, though
+```
 
 and finally, to create your TimeGlider JSON:
 
+```java
     GsonFormatter g = new GsonFormatter(new List<Timeline>(){ timelines });
 
     String timeglider_json = g.toJson();  // Ta Da!
+```
 
 Details about Timeglider can be found in the Information section.
 
